@@ -1,0 +1,24 @@
+{
+  "name": "query-string-params",
+  "version": "1.0.0",
+  "description": "Creates a url with query params and creates and object/list of params using the URL.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bansalrachita/url-query-string.git"
+  },
+  "keywords": [
+    "query-string",
+    "query",
+    "url-string"
+  ],
+  "author": "Rachita Bansal <rachita.gemm30@gmail.com> (http://jobtrackingsys-rbansal.rhcloud.com/#/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bansalrachita/url-query-string/issues"
+  },
+  "homepage": "https://github.com/bansalrachita/url-query-string#readme"
+}
