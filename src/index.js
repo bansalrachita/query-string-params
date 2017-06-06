@@ -5,8 +5,10 @@ var propertyToUrl = require("propertyToUrl");
 var urlToProperty = require("urlToProperty");
 var urlToList = require("urlToList");
 
-module.exports = {
-    propertyToUrl: propertyToUrl,
-    urlToProperty: urlToProperty,
-    urlToList: urlToList
-};
+if (typeof module !== 'undefined') {
+    module.exports = {
+        propertyToUrl: propertyToUrl,
+        urlToProperty: urlToProperty,
+        urlToList: urlToList
+    };
+}
