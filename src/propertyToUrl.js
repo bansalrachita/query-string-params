@@ -22,7 +22,7 @@ const paramString = (values) => {
  * @param {object} objects properties object.
  * @return {string} url string with query params.
  * */
-export const listToUrl = (objects) => {
+export const propertyToUrl = (objects) => {
     let queryString = "";
     Object.keys(objects).map((key, index) => {
         if (index === 0 ) {
@@ -35,3 +35,4 @@ export const listToUrl = (objects) => {
 
     return queryString;
 };
+

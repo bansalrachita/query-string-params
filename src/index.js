@@ -1,14 +1,12 @@
 /**
  * Created by rachitabansal on 6/5/17.
  */
-var propertyToUrl = require("propertyToUrl");
-var urlToProperty = require("urlToProperty");
-var urlToList = require("urlToList");
+import {propertyToUrl} from "./propertyToUrl";
+import {urlToProperty} from "./urlToProperty";
+import {urlToList} from "./urlToList";
 
-if (typeof module !== 'undefined') {
-    module.exports = {
-        propertyToUrl: propertyToUrl,
-        urlToProperty: urlToProperty,
-        urlToList: urlToList
-    };
-}
+export {
+    propertyToUrl,
+    urlToList,
+    urlToProperty
+};
