@@ -31,37 +31,20 @@ The returned object is inherits from Object.prototype.
 
 Extract a query string from a URL that can be passed into the function and 
 returns an object in the form of properties with corresponding array values.
-
+```
 For example,  
-```
-/* '?foo=bar&fruits=apple' */
 
-const parsed = urlToProperty(location.search);
+/* location.search = 'foo=bar&fruits=apple' */
 
-console.log(parsed);
+const property = urlToProperty(location.search);
 
-/* {{foo: [bar]}, {fruits: [apple]}} */
+console.log(property);
 
-parsed.foo = [bar];
+/* {{foo: [xyz]}, {bar: [abc]}} */
 
-parsed.fruits = [apple];
+property.foo = [xyz];
 
-```
-#### .propertyToUrl(properties)
-
-Converts an object with properties into a string URL which can be passed to 
-the history API using push/replace or using Link, Redirect etc.
-The returned object is of type string.
-
-For example,  
-```
-/* {{foo:[abc, xyz]}, {bar: [xxx, yyy]}} */
-
-const parsed = propertyToUrl(location.search);
-
-console.log(parsed);
-
-/* 'foo=abc,xyz&bar=xxx,yyy' */
+property.bar = [abc];
 
 ```
 
@@ -70,19 +53,38 @@ Parses a query string into an object and location.search can be passed directly.
 
 Extract a query string from a URL that can be passed into the function and 
 returns an array in the form of properties with corresponding array values.
-
-For example,  
 ```
-/* '?foo=xyz&bar=abc' */
+For example,  
 
-const parsed = urlToArray(location.search);
+/* location.search = '?foo=xyz&bar=abc' */
 
-console.log(parsed);
+const list = urlToArray(location.search);
+
+console.log(list);
 
 /* [{foo: [xyz]}, {bar: [abc]}] */
 
-parsed[0] = {foo: [xyz];
+list[0] = {foo: [xyz];
 
-parsed[1] = {fruits: [abc]};
+list[1] = {bar: [abc]};
+
+```
+#### .propertyToUrl(properties)
+
+Converts an object with properties into a string URL which can be passed to 
+the history API using push/replace or using Link, Redirect etc.
+The returned object is of type string.
+```
+For example,  
+
+/* {{foo:[abc, xyz]}, {bar: [xxx, yyy]}} */
+
+let queryString = propertyToUrl(location.search);
+
+queryString += "?" + propertyToUrl(params);
+
+console.log(queryString);
+
+/* 'foo=abc,xyz&bar=xxx,yyy' */
 
 ```
