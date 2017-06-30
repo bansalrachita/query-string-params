@@ -23,10 +23,10 @@ export const urlToList = (queryString) => {
 
             for(let i=0; i<obj[key].length; i++){
 
-                if( obj[key][i].includes(encodeURIComponent("&"))) {
+                if(obj[key][i].includes(encodeURIComponent("&"))) {
 
                     obj[key][i] = obj[key][i].split(encodeURIComponent("&"))
-                        .join(decodeURIComponent(encodeURIComponent("&")))
+                        .join(decodeURIComponent(encodeURIComponent("&")));
 
                 }
             }

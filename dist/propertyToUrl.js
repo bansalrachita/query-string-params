@@ -14,11 +14,15 @@ Object.defineProperty(exports, "__esModule", {
 var paramString = function paramString(values) {
     var queryParams = "";
     if (Array.isArray(values)) {
+
         values.map(function (value, index) {
-            return index === 0 ? queryParams += value.replace("&", encodeURIComponent("&")) : queryParams += "," + value.replace("&", encodeURIComponent("&"));
+            var joinBy = "";
+            if (index === 0) joinBy = ",";
+
+            return queryParams += joinBy + value.split("&").join(encodeURIComponent("&"));
         });
     } else {
-        queryParams += values.replace("&", encodeURIComponent("&"));
+        queryParams += values.split("&").join(encodeURIComponent("&"));
     }
     return queryParams;
 };
