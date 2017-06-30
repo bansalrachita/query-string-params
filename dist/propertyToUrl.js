@@ -18,7 +18,7 @@ var paramString = function paramString(values) {
             return index === 0 ? queryParams += value.replace("&", encodeURIComponent("&")) : queryParams += "," + value.replace("&", encodeURIComponent("&"));
         });
     } else {
-        queryParams += value.replace("&", encodeURIComponent("&"));
+        queryParams += values.replace("&", encodeURIComponent("&"));
     }
     return queryParams;
 };

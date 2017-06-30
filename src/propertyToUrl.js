@@ -9,13 +9,18 @@
 const paramString = (values) => {
     let queryParams = "";
     if (Array.isArray(values)) {
-        values.map((value, index) =>
-        index === 0 ? queryParams += value.replace("&",
-            encodeURIComponent("&")) : queryParams += "," + value.replace("&",
-                encodeURIComponent("&")));
+
+        values.map((value, index) => {
+            let joinBy = "";
+            if(index === 0)
+                joinBy = ",";
+
+            return queryParams += joinBy + value.split("&")
+                    .join(encodeURIComponent("&"))
+        });
+
     } else {
-        queryParams += values.replace("&",
-            encodeURIComponent("&"));
+        queryParams += values.split("&").join(encodeURIComponent("&"));
     }
     return queryParams;
 };

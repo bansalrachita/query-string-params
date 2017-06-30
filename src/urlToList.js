@@ -8,20 +8,29 @@
 // ?a=x,y,z&b=z [{a: [x,y]}, {b:[z]}]
 export const urlToList = (queryString) => {
     let result = [];
+
     if (queryString.length > 0) {
+
         let queryArray = queryString.substring(1).split("&");
+
         for (let i in queryArray) {
+
             let query = queryArray[i].split("=");
             let key = query[0];
             let obj = {};
+
             obj[key] = query[1].split(",") || [];
 
             for(let i=0; i<obj[key].length; i++){
+
                 if( obj[key][i].includes(encodeURIComponent("&"))) {
-                    obj[key][i] = obj[key][i].replace(encodeURIComponent("&"),
-                        decodeURIComponent(encodeURIComponent("&")))
+
+                    obj[key][i] = obj[key][i].split(encodeURIComponent("&"))
+                        .join(decodeURIComponent(encodeURIComponent("&")))
+
                 }
             }
+
             result.push(obj);
         }
     }
