@@ -14,7 +14,7 @@ const paramString = (values) => {
             encodeURIComponent("&")) : queryParams += "," + value.replace("&",
                 encodeURIComponent("&")));
     } else {
-        queryParams += value.replace("&",
+        queryParams += values.replace("&",
             encodeURIComponent("&"));
     }
     return queryParams;

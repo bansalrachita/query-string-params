@@ -1,6 +1,6 @@
 {
   "name": "query-string-params",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Creates a url with query params and creates and object/list of params using the URL.",
   "main": "dist/index.js",
   "scripts": {
