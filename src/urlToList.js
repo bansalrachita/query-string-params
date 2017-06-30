@@ -14,7 +14,8 @@ export const urlToList = (queryString) => {
             let query = queryArray[i].split("=");
             let key = query[0];
             let obj = {};
-            obj[key] = query[1].split(",") || [];
+            obj[key] = query[1].split(",")
+                    .replace("%26", decodeURIComponent("%26")) || [];
             result.push(obj);
         }
     }

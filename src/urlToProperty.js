@@ -13,7 +13,7 @@ export const urlToProperty = (queryString) => {
         for (let i in queryArray) {
             let query = queryArray[i].split("=");
             let key = query[0];
-            result[key] = query[1].split(",") || [];
+            result[key] = query[1].split(",").replace("%26", decodeURIComponent("%26")) || [];
         }
     }
     return result;

@@ -10,7 +10,9 @@ const paramString = (values) => {
     let queryParams = "";
     if (Array.isArray(values)) {
         values.map((value, index) =>
-        index === 0 ? queryParams += value : queryParams += "," + value);
+        index === 0 ? queryParams += value.replace("&",
+            encodeURIComponent("&")) : queryParams += "," + value.replace("&",
+                encodeURIComponent("&")));
     } else {
         queryParams += values;
     }
