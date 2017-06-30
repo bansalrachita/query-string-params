@@ -18,7 +18,7 @@ var urlToProperty = exports.urlToProperty = function urlToProperty(queryString) 
         for (var i in queryArray) {
             var query = queryArray[i].split("=");
             var key = query[0];
-            result[key] = query[1].split(",") || [];
+            result[key] = query[1].split(",").replace("%26", decodeURIComponent("%26")) || [];
         }
     }
     return result;

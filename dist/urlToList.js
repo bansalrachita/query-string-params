@@ -19,7 +19,7 @@ var urlToList = exports.urlToList = function urlToList(queryString) {
             var query = queryArray[i].split("=");
             var key = query[0];
             var obj = {};
-            obj[key] = query[1].split(",") || [];
+            obj[key] = query[1].split(",").replace("%26", decodeURIComponent("%26")) || [];
             result.push(obj);
         }
     }

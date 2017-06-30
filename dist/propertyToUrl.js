@@ -15,7 +15,7 @@ var paramString = function paramString(values) {
     var queryParams = "";
     if (Array.isArray(values)) {
         values.map(function (value, index) {
-            return index === 0 ? queryParams += value : queryParams += "," + value;
+            return index === 0 ? queryParams += value.replace("&", encodeURIComponent("&")) : queryParams += "," + value.replace("&", encodeURIComponent("&"));
         });
     } else {
         queryParams += values;
