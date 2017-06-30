@@ -17,13 +17,13 @@ var urlToProperty = exports.urlToProperty = function urlToProperty(queryString) 
         var queryArray = queryString.substring(1).split("&");
         for (var i in queryArray) {
             var query = queryArray[i].split("=");
-            var _key = query[0];
-            result[_key] = query[1].split(",") || [];
-        }
+            var key = query[0];
+            result[key] = query[1].split(",") || [];
 
-        for (var _i = 0; _i < result[key].length; _i++) {
-            if (result[key][_i].includes(encodeURIComponent("&"))) {
-                result[key][_i] = result[key][_i].replace(encodeURIComponent("&"), decodeURIComponent(encodeURIComponent("&")));
+            for (var _i = 0; _i < result[key].length; _i++) {
+                if (result[key][_i].includes(encodeURIComponent("&"))) {
+                    result[key][_i] = result[key][_i].replace(encodeURIComponent("&"), decodeURIComponent(encodeURIComponent("&")));
+                }
             }
         }
     }
