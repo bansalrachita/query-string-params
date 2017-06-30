@@ -25,7 +25,7 @@ export const urlToProperty = (queryString) => {
                 if( result[key][i].includes(encodeURIComponent("&"))) {
 
                     result[key][i] = result[key][i]
-                        .split(encodeURIComponent("&")
+                        .split(encodeURIComponent("&"))
                         .join(decodeURIComponent(encodeURIComponent("&")));
 
                 }
