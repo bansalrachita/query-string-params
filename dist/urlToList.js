@@ -19,7 +19,13 @@ var urlToList = exports.urlToList = function urlToList(queryString) {
             var query = queryArray[i].split("=");
             var key = query[0];
             var obj = {};
-            obj[key] = query[1].split(",").replace("%26", decodeURIComponent("%26")) || [];
+            obj[key] = query[1].split(",") || [];
+
+            for (var _i = 0; _i < obj[key].length; _i++) {
+                if (obj[key][_i].includes(encodeURIComponent("&"))) {
+                    obj[key][_i] = obj[key][_i].replace(encodeURIComponent("&"), decodeURIComponent(encodeURIComponent("&")));
+                }
+            }
             result.push(obj);
         }
     }
