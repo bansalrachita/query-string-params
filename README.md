@@ -3,10 +3,12 @@ This is a utility for developers using React Router 4 for developing
 their web application. React Router 4 provides a prop called location same as
 found in the hisotry API which has a property called search. It's a string 
 parameter and gets a value when the URL gets attached with query parameters. 
-This property can be useful in the way you want to code your URL logic and 
-allows for custom URL with query param capability. This utility can create a 
-URL with query parameters separated by ampersand with comma separated values.
-It can convert the URL in an object/list of values from query string.
+This property is useful to code your URL logic and allows for custom URL 
+with query params. This utility creates a URL with query parameters 
+separated by ampersand. It can convert the URL in an object/list of values 
+from query string. It allows you to pass "&" in query params and encodes 
+alphanumeric special character with escape character (URI 
+encoding UTF-8).
 
 ## Install
 ```

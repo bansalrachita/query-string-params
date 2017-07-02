@@ -12,7 +12,7 @@ const paramString = (values) => {
 
         values.map((value, index) => {
             let joinBy = "";
-            if(index === 0)
+            if(index > 0)
                 joinBy = ",";
 
             return queryParams += joinBy + value.split("&")
