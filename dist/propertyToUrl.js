@@ -17,7 +17,7 @@ var paramString = function paramString(values) {
 
         values.map(function (value, index) {
             var joinBy = "";
-            if (index === 0) joinBy = ",";
+            if (index > 0) joinBy = ",";
 
             return queryParams += joinBy + value.split("&").join(encodeURIComponent("&"));
         });
