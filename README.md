@@ -80,14 +80,12 @@ The returned object is of type string.
 ```
 For example,  
 
-/* {{foo:[abc, xyz]}, {bar: [xxx, yyy]}} */
+let params = {{foo:[abc, xyz]}, {bar: [xxx, yyy]}};
 
-let queryString = propertyToUrl(location.search);
-
-queryString += "?" + propertyToUrl(params);
+queryString = "?" + propertyToUrl(params);
 
 console.log(queryString);
 
-/* 'foo=abc,xyz&bar=xxx,yyy' */
+/* '?foo=abc,xyz&bar=xxx,yyy' */
 
 ```
