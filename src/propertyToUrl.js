@@ -42,7 +42,3 @@ export const propertyToUrl = (objects) => {
 
     return queryString;
 };
-
-// const obj = {orgType: ["a", "b", "c"], orgId: ["x ", "y"]};
-// const result = propertyToUrl(obj);
-// console.log(result);

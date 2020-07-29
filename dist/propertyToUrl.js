@@ -19,10 +19,10 @@ var paramString = function paramString(values) {
             var joinBy = "";
             if (index > 0) joinBy = ",";
 
-            return queryParams += joinBy + value.split("&").join(encodeURIComponent("&"));
+            return queryParams += joinBy + encodeURIComponent(value);
         });
     } else {
-        queryParams += values.split("&").join(encodeURIComponent("&"));
+        queryParams += encodeURIComponent(values);
     }
     return queryParams;
 };
